@@ -1,0 +1,16 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/tokerali/ros2_ws3/install/actions_py/lib/python3.12/site-packages",
+        "/home/tokerali/ros2_ws3/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/home/tokerali/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/tokerali/ros2_ws/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/tokerali/ros2_ws3/install/actions_py/lib/python3.12/site-packages",
+        "/home/tokerali/ros2_ws3/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/home/tokerali/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/tokerali/ros2_ws/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
+}
