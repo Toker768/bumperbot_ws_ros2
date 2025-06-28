@@ -1,27 +1,28 @@
-#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String  
+from std_msgs.msg import String
 
 
-class SimpleSubscriber(Node): 
+class SimpleSubscriber(Node):
+
     def __init__(self):
         super().__init__("simple_subscriber")
         self.sub_ = self.create_subscription(String, "chatter", self.msgCallback, 10)
-
+        self.sub_
 
     def msgCallback(self, msg):
-        self.get_logger().info(f"I heard: {msg.data}")
-        # Here you can add any processing logic for the received message
+        self.get_logger().info("I heard: %s" % msg.data)
 
 
-def main(args=None):
-    rclpy.init(args=args)
-    node = SimpleSubscriber() 
-    rclpy.spin(node)
-    node.destroy_node()
+def main():
+    rclpy.init()
+
+    simple_publisher = SimpleSubscriber()
+    rclpy.spin(simple_publisher)
+    
+    simple_publisher.destroy_node()
     rclpy.shutdown()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

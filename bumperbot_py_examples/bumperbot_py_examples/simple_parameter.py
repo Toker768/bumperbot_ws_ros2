@@ -1,5 +1,5 @@
 import rclpy
-from rclpy.node import Node       # always import Node first
+from rclpy.node import Node
 from rcl_interfaces.msg import SetParametersResult
 from rclpy.parameter import Parameter
 
@@ -8,8 +8,8 @@ class SimpleParameter(Node):
     
     def __init__(self):
         super().__init__("simple_parameter")
-        self.declare_parameter("simple_int_param", 21)       # I have two parameters
-        self.declare_parameter("simple_string_param", "Ali_Toker")
+        self.declare_parameter("simple_int_param", 28)
+        self.declare_parameter("simple_string_param", "Antonio")
 
         self.add_on_set_parameters_callback(self.paramChangeCallback)
 

@@ -1,13 +1,14 @@
-<?xml version ="1.0"?>
+<?xml version="1.0"?>
 
 <robot name="bumperbot" xmlns:xacro="http://ros.org/wiki/xacro">
 
+  <!-- Start GZ or Ignition depending on ROS 2 Version -->
   <xacro:arg name="is_ignition" default="true"/>
 
   <!-- Include Gazebo Parameters -->
   <xacro:include filename="$(find bumperbot_description)/urdf/bumperbot_gazebo.xacro" />
 
-  <!-- ROS2 Control-->
+  <!-- Include ros2_control Plugins -->
   <xacro:include filename="$(find bumperbot_description)/urdf/bumperbot_ros2_control.xacro" />
 
   <link name="base_footprint"/>
@@ -33,14 +34,13 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link" />
     <origin xyz="0 0 0.033" rpy="0 0 0"/>
   </joint>
 
-
-  
   <link name="wheel_right_link">
     <inertial>
       <origin xyz="0 -0.014 0" rpy="0 0 0" />
@@ -62,6 +62,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="wheel_right_joint" type="continuous">
     <origin xyz="0 -0.0701101849418637 0" rpy="0 0 0" />
     <parent link="base_link" />
@@ -69,9 +70,8 @@
     <axis xyz="0 1 0" />
   </joint>
   
-
-
-  <link name="wheel_left_link">
+  <link
+    name="wheel_left_link">
     <inertial>
       <origin xyz="0 0.014 0" rpy="0 0 0" />
       <mass value="0.0530086043217644" />
@@ -92,14 +92,13 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="wheel_left_joint" type="continuous">
     <origin xyz="0 0.0701101849418642 0" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="wheel_left_link" />
     <axis xyz="0 1 0" />
   </joint>
-
-
 
   <link name="caster_front_link">
     <inertial>
@@ -122,6 +121,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="caster_front_joint" type="fixed">
     <origin xyz="0.04755 0 -0.0275" rpy="0 0 0" />
     <parent link="base_link" />
@@ -129,8 +129,6 @@
     <axis xyz="0 0 0" />
   </joint>
   
-
-
   <link name="caster_rear_link">
     <inertial>
       <origin xyz="3.8996812895542E-07 2.40073004698083E-07 0.00219173397061509" rpy="0 0 0" />
@@ -152,6 +150,7 @@
       </geometry>
     </collision>
   </link>
+
   <joint name="caster_rear_joint" type="fixed">
     <origin xyz="-0.04755 0 -0.0275" rpy="0 0 0" />
     <parent link="base_link" />
