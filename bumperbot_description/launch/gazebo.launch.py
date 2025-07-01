@@ -79,3 +79,17 @@ def generate_launch_description():
         gz_spawn_entity,
         gz_ros2_bridge,
     ])
+
+
+
+#--------------------------------------------------------------------------------------------------------------------------
+
+# We use launch files to:
+
+# Start nodes (sure)
+# Set parameters
+# Load URDF (sure)
+# Start Gazebo (sure)
+# Spawn the robot (sure)
+# Start bridges (sure)
+

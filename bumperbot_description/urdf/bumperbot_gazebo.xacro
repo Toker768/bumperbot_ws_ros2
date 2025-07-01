@@ -47,6 +47,8 @@
     <!-- ROS 2 Humble -->
     <xacro:if value="$(arg is_ignition)">
       <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+        <!-- These are not neural nets, they are not AI or deep learning networks.
+         Plugins used in Gazebo or Ignition Gazebo (new name: Gazebo Sim) to connect your robot simulation to ROS 2 Control. -->
         <parameters>$(find bumperbot_controller)/config/bumperbot_controllers.yaml</parameters>
       </plugin>
     </xacro:if>
